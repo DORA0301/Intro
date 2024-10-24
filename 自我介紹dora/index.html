@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+
+<body>
+    <!-- header design -->
+    <header>
+        <a href="#" class="logo">LAI.<span>Y</span>I-LING</a>
+        <ul class="navlist">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+
+    <!----home section design --->
+    <section class="home" id="home">
+        <div class="home-text"></div>
+        <div class="slide">
+
+        </div>
+        <div id="intro">
+           
+            <h1>I'm &nbspDORA </h1>
+            <h3>The&nbspWorld&nbspIs&nbspMY</h3>
+            <span class="ml3" id="oyster"
+            style="text-shadow: 5px 5px wheat;font-weight: 800;">Oyster</span>
+        </div>
+    
+        <script>
+            //oyster動起來  
+            var textWrapper = document.querySelector('.ml3');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            anime.timeline({ loop: true })
+                .add({
+                    targets: '.ml3 .letter',
+                    opacity: [0, 1],
+                    easing: "easeInOutQuad",
+                    duration: 2250,
+                    delay: (el, i) => 150 * (i + 1)
+                }).add({
+                    targets: '.ml3',
+                    opacity: 0,
+                    duration: 1000,
+                    easing: "easeOutExpo",
+                    delay: 1000
+                });
+
+        </script>
+    </section>
+
+
+    <!----About section design --->
+    <section class="about" id="about">
+        <div class="about-img" >
+            <img src="./img/手比愛心橘色底裁切.jpg">
+        </div>
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <br>
+            <p>畢業於台灣科技大學，化學工程系<br>
+              
+               嗜好：到處撿貓<br>
+               我家有兩隻被我撿的貓。<br>
+               最喜歡的東西是台灣的諧音梗<br>
+               你的腋毛很難刮。
+            </p>
+        </div>
+    </section>
+    <!----Hobby section design --->
+    <section class="hobbies">
+        <br></br>
+        <div class="main-text" id="hobbies" >
+            <p>what I am Interested In</p>
+            <h2><span>My </span>Hobbies</h2>
+        </div>
+        <div class="hobbies-content">
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bxs-tree'></i>
+                </div>
+                <h3>Mountain Climbing</h3>
+                白姑大山單攻、奇萊主北、嘉明湖、玉山、雪山、大小霸、北大武...
+                <p>
+                </p>
+                <a href="#slide" class="read">Read More</a>
+            </div>
+
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bx-swim'></i>
+                </div>
+                <h3>Scuba diving</h3>
+                <p>媽媽怕絲瓜島長尾鯊、冬天的墾丁、馬來西亞西巴丹...</p>
+                <a href="#" class="read">Read More</a>
+            </div>
+
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bx-baguette'></i>
+                </div>
+                <h3>Baking</h3>
+                <p>乳酪蛋糕、菠蘿麵包、牛角麵包......沒人要吃的種種麵包，烤焦的餅乾</p>
+                <a href="#" class="read">Read More</a>
+            </div>
+        </div>
+        <br><br><br><br>
+    </section>
+    
+    <!----contact section design --->
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact <span>Me!</span></h2>
+            <h4>" The world is an oyster ;<br>
+                let's connect and explore its boundless pearls together. "</h4>
+
+        <div class="contact-icons">
+            <br>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a></div>
+            <br>
+        </div>
+        
+
+        <div class="contact-form">
+            <form action="">
+                <br></br>
+                <input type="name" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea name="" id="" cols="35" rows="10" placeholder="Let's Talk!"></textarea>
+                <input id="ss" type="submit" value="Send Message" class="submit" required>
+            </form>
+        </div>
+        <br><br><br><br>
+    </section>
+
+    <section id="slide">
+        <div class="slideshowContainer" >
+  
+            <!-- Replace the image 'src' with the images in your project.
+            Javascript is set up so that you can add as many images as you like, but make sure that you match the number of 'circle' span elements (below) to the number of images -->
+              <img class="imageSlides" src="./img/爬山A.jpg">
+              <img class="imageSlides" src="./img/爬山B.jpg">
+              <img class="imageSlides" src="./img/爬山.jpg">
+              <img class="imageSlides" src="./img/爬山1.jpg">
+              <img class="imageSlides" src="./img/溯溪.jpg">
+              <img class="imageSlides" src="./img/潛水1.jpg">
+              <img class="imageSlides" src="./img/潛水2.jpg">
+              <img class="imageSlides" src="./img/牛角麵包.jpg">
+              <img class="imageSlides" src="./img/leo.jpg">
+              <img class="imageSlides" src="./img/閃電.jpg">
+              <img class="imageSlides" src="./img/貓貓.jpg">
+              <img class="imageSlides" src="./img/family first.jpg">
+            <!-- I would recommend to replace these 'span' elements with 'img' files
+            for each the left and right arrow that fits your project, and size accordingly.
+            I've shown 'span' elements because I didn't want to upload files. -->
+              <span id ="leftArrow" class="slideshowArrow">&#8249;</span>
+              <span id ="rightArrow" class="slideshowArrow">&#8250;</span>
+              
+              <div class="slideshowCircles">
+            <!-- Filled 'dot' class is set to first image in slideshow, and then via Javascript the filled 'dot' class follows the current image.
+            Make sure you match the number of these 'circle' span elements to the number of images in your slideshow. -->
+                <span class="circle dot"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+              </div>
+              
+            </div>
+    </section>
+
+    <!-- custom js link -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

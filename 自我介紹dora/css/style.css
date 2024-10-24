@@ -1,0 +1,500 @@
+section {
+    padding: 50px 15% 120px;
+    /* 這個15%跟header一樣 */
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #2a2a2a;
+    --second-bg-color: #202020;
+    --text-color: #fff;
+    --second-color: #ccc;
+    --main-color: #ff4d05;
+    --big-font: 5rem;
+    --h2-font: 3rem;
+    --p-font: 1.1rem;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color)
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: fixed;: 這個屬性將元素的定位方式設置為「fixed」，意味著該元素的位置相對於視窗保持固定，不會隨著頁面的滾動而改變。
+    width: 100%;: 這個屬性將元素的寬度設置為100%，使其佔據整個父容器的寬度。                        
+    top: 0;: 這個屬性將元素的上邊緣與視窗的頂部對齊，因為position: fixed;使得元素相對於視窗定位。
+    right: 0;: 這個屬性將元素的右邊緣與視窗的右側對齊，這裡設定為0，表示元素與視窗的右邊完全對齊。
+    z-index: 1000;: 這個屬性設置了元素的堆疊順序。當多個元素重疊時，z-index值較大的元素會在較小的元素之上顯示。這裡將z-index設置為1000，確保這個元素在其他z-index值較小的元素之上顯示。
+    display: flex;: 這個屬性將元素設置為彈性盒模型，這樣可以使用Flex布局。
+    align-items: center;: 這個屬性用於定義彈性盒子在交叉軸上的對齊方式，這裡將元素的交叉軸（垂直軸）上的對齊方式設置為居中對齊。
+    justify-content: space-between;: 這個屬性用於定義彈性盒子在主軸上的對齊方式，這裡將元素的主軸（水平軸）上的對齊方式設置為兩端對齊，即元素之間均勻分佈，留有間距。 */
+    background: transparent;
+    padding: 22px 15%;
+    border-bottom: 1px solid transparent;
+    transition: all .45s ease;
+    /*padding: 22px 15%;：這個屬性用於設置元素的內邊距。這裡使用了兩個值，
+    分別是22px和15%。這意味著元素的上下內邊距設置為22px，左右內邊距設置為元素寬度的15%。
+    設置內邊距可以在元素的內容和邊框之間創建空間。
+    border-bottom: 1px solid transparent;：這個屬性用於設置元素的底部邊框。
+    這裡使用了三個值，分別是1px、solid和transparent。1px表示邊框的寬度為1個像素，solid表示邊框的樣式為實線，
+    transparent表示邊框的顏色為透明。由於顏色設置為透明，這個邊框在顯示上將不可見，但保留了1像素的高度。通常，這種技巧用於創建分隔線的效果。
+    transition: all .45s ease;：這個屬性用於設置元素的過渡效果。這裡使用了三個值，分別是all、.45s和ease。
+    all表示這個過渡效果作用在元素的所有屬性上，包括padding和border。.45s表示過渡持續時間為0.45秒，這是指過渡效果從開始到結束的時間長度。
+    ease表示過渡的時間曲線為緩入緩出，這是一種平滑的過渡方式，開始和結束時速度較慢，中間速度較快。
+    總體來說，這段CSS代碼用於設置元素的內邊距、底部邊框以及過渡效果。根據具體的HTML結構，這些樣式可能會導致元素在網頁中展示不同的效果。  */
+
+}
+
+.logo {
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    /* 1px 表示將字母間的距離增加 1 個像素。 */
+
+}
+
+span {
+    color: var(--main-color);
+}
+
+.navlist {
+    display: flex;
+    /* 使用 display: flex; 屬性可以將一個元素設置為彈性容器
+    該容器內的子元素（flex子項目）就會成為彈性項目 */
+    /* 當一個元素被設置為 display: flex; 後，它具有以下特性：
+    1.其內部子元素會按照 Flexbox 布局規則進行排列。
+    2.預設情況下，子元素將會佔據容器的全部寬度，但可以使用其他屬性調整子元素的寬度和高度。
+    3.可以使用其他 Flexbox 屬性來控制子元素的對齊方式、排列順序、彈性增長等等。 */
+    /* EXAMPLE */
+    /* .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1;
+} */
+
+    /*.container 是彈性容器，justify-content: space-between; 設置了子元素在水平方向上等間距排列。
+.item 是子元素，flex: 1; 屬性使得子元素自動填充剩餘的空間，讓每個子元素都佔滿一樣的寬度。  */
+}
+
+.navlist a {
+    color: var(--second-color);
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0 25px;
+    /* margin用來設置元素的外邊距。這個屬性可以接受一到四個值，用於指定上、右、下、左四個方向的外邊距。 */
+    /* 0 25px 表示指定了上下外邊距為0，左右外邊距為 25 像素。這樣就會將元素的左右兩側與其鄰近元素保持 25 像素的距離，而上下兩側則與其鄰近元素貼合。 */
+    transition: all .45s ease;
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+}
+
+.navlist a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 35px;
+    color: var(--text-color);
+    z-index: 10001;
+    cursor: pointer;
+    margin-left: 25px;
+    display: none;
+}
+
+.slide {
+    margin-bottom: 20px;
+}
+
+#intro {
+    margin-top: 100px ;
+    font-size: 50px ;
+    font-weight: 600 ;
+        /* 這個15%跟header一樣 */
+}
+
+#intro.h1{
+    font-size: 180px;
+}
+#oyster {
+    
+    font-size: 180px;
+    margin-top: 400px;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background-image: url(../img/座吊橋.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header.sticky {
+    background: var(--bg-color);
+    border-bottom: 1px solid #ffffff1a;
+    padding: 12px 15%;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+}
+
+.about-img img {
+    max-width: 530px;
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about-text h2 {
+    font-size: 5rem;
+}
+
+.about-text h4 {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+
+.about-text p {
+    color: var(--second-color);
+    font-size: 28px;
+    line-height: 2;
+    margin-bottom: 1rem;
+}
+
+@keyframes flash {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0.5;
+    }
+}
+
+
+.btn {
+    display: inline-block;
+    margin-top: 2rem;
+    background: var(--main-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all .45s ease;
+}
+
+.btn {
+    animation: flash 2s infinite;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    animation-play-state: paused;
+    /* 停止閃爍效果 */
+}
+
+.hobbies {
+    background: var(--second-bg-color);
+}
+
+.main-text {
+    text-align: center;
+}
+
+.main-text p {
+    color: var(--second-color);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.main-text h2 {
+    font-size: var(--h2-font);
+    line-height: 1;
+}
+
+
+
+.hobbies-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 5rem;
+
+    /* 做網格待學習 */
+}
+
+.box {
+
+    background: var(--bg-color);
+    padding: 40px 20px;
+    border-radius: 8px;
+    transition: all .45s ease;
+
+}
+
+
+.s-icons i {
+    font-size: 32px;
+    margin-bottom: 20px;
+
+}
+
+.box h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.box p {
+    color: var(--second-color);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+    /* 或者使用 overflow-wrap: break-word; 幫他自動換行避免超出框框 */
+}
+
+.read {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #333333;
+    color: var(--second-color);
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all .45s ease;
+}
+
+.read:hover {
+    letter-spacing: 1px;
+    background: #ff4d05;
+    color: var(--text-color);
+}
+
+.box:hover {
+    background: #cccccc7c
+}
+
+.contact {
+    background: var(--second-bg-color);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.contact-text h4 {
+    color: var(--text-color);
+    margin: 18px 0;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.contact-text h2 {
+    font-size: var(--h2-font);
+    line-height: 2;
+
+}
+
+.contact-icons i {
+
+    height: 50px;
+    width: 50px;
+    background: var(--main-color);
+    color: var(--text-color);
+    font-size: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 25px;
+    transition: all .45s ease;
+
+}
+
+.contact-icons i:hover {
+    background: var(--text-color);
+    color: var(--main-color);
+}
+
+.contact-form {
+    position: relative;
+}
+
+.contact-form form input,
+form textarea {
+    width: 100%;
+    padding: 20px;
+    /* 為啥padding:14px 框框可以變大啊! */
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 200px;
+}
+
+.contact-form .submit {
+    display: inline-block;
+    font-size: 16px;
+    background: var(--main-color);
+    color: var(--text-color);
+    width: 100%;
+    transition: all .45s ease
+}
+
+.contact-form .submit:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+
+@media(max-width:1480px) {
+    header {
+        padding: 12px 2.5%;
+        transition: .1s;
+    }
+
+    header.sticky {
+        padding: 10px 2.5%;
+        transition: .1s;
+    }
+    section{
+        padding: 50px 3% 60; 
+    }
+    
+    }
+
+
+@media (max-width:1100px){
+    :root{
+    --big-font: 4rem;
+    --h2-font: 2.5rem;
+    --p-font: 1rem;
+        transition: .1s;
+    }
+
+}
+
+.slideshowContainer {
+    position: relative;
+    overflow: hidden;
+    margin: 50px 0 75px;
+    width: 100%;
+    height: 1000px;
+  }
+  
+  .imageSlides {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: -1;
+  }
+  
+  /* add 'visible' class via Javascript */
+  .visible {
+    opacity: 1;
+  }
+  
+  .slideshowArrow {
+    font-size: 7em;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .slideshowArrow:hover {
+    opacity: 0.75;
+  }
+  
+  #leftArrow {
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #rightArrow {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
+  
+  .slideshowCircles {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .circle {
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: solid 2px rgba(255, 255, 255, 0.5);
+    transition: 1s ease-in-out;
+  }
+  
+  .dot {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: solid 2px rgba(255, 255, 255, 0.5);
+  }
